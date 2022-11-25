@@ -2,6 +2,7 @@ from django.shortcuts import render
 import pandas as pd
 
 
+
  
 
 def question_1(request):
@@ -14,6 +15,7 @@ def question_1(request):
 
     df_listings['host_acceptance_rate'] = df_listings['host_acceptance_rate'].str.rstrip("%").astype(float)
     df_listings['host_response_rate'] = df_listings['host_response_rate'].str.rstrip("%").astype(float)
+
     mean_acceptance= df_listings['host_acceptance_rate'].mean().round(2)
     mean_response= df_listings['host_response_rate'].mean().round(2)
 
@@ -27,6 +29,7 @@ def question_1(request):
     df_listings["email"] = df_listings["host_verifications"].apply(lambda x: "1" if "email" in x else "0")
     email_pourcentage = df_listings["email"].astype('int').sum()/len (df_listings["email"])
     email_pourcentage=email_pourcentage.round(3)
+
 
     df_listings["number_of_amenities"] =df_listings.amenities.str.count(',')
     df_listings["number_of_amenities"] =df_listings.number_of_amenities.astype(int)
@@ -49,7 +52,9 @@ def question_1(request):
     df_listings["description"] = df_listings["description"].astype("string")
     df_listings = df_listings.dropna(subset="description")
     df_listings["description_length"] = df_listings["description"].apply(len)
+
     coorelation = df_listings["description_length"].corr(df_listings["number_of_reviews"]).round(2)
+
 
     df_merge = df_listings.merge(df_reviews, how='inner', left_on = 'id', right_on = 'listing_id')
     faux_commentaire = df_merge[df_merge["host_name"]==df_merge["reviewer_name"]].shape[0]
@@ -62,8 +67,13 @@ def question_1(request):
                                                             'phone':phone_pourcentage, 
                                                             'work':work_pourcentage, 
                                                              'email':email_pourcentage, 
+
                                                             'amenities':amenities.to_html(classes="table table-sm"), 
                                                             'price':price.to_html, 
+
+                                                                  'amenities':amenities.to_html, 
+                                                                'price':price.to_html, 
+
                                                               'bath':bath,
                                                              'corelation':coorelation, 
                                                              'faux':faux_commentaire 
