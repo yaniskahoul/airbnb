@@ -1,0 +1,108 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5">Calculez le nombre hosst et le nombre de review par quartier?</h2>
+        <p class="lead">{{question1|safe}}</p>
+      </div>
+      {% comment %} <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div> {% endcomment %}
+    </div>
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5">Quels sont les pourcentage dacceptation et de réponse moyen des hosts? </h2>
+        <p class="lead">{{acceptance}} {{response}}</p>
+      </div>
+      {% comment %} <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div> {% endcomment %}
+    </div>
+  </div>
+</div>
+
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+  <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <div class="my-3 py-3">
+      <h2 class="display-5">Quel pourcentage des hosts on une vérification:
+
+        par téléphone
+        par email
+        par email pro</h2>
+      <p class="lead">{{phone}} {{work}} {{email}}</p>
+    </div>
+    {% comment %} <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div> {% endcomment %}
+  </div>
+  <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <div class="my-3 p-3">
+      <h2 class="display-5">En fonction du type de room, calculez le nombre moyen amenities et l'écart type</h2>
+      <p class="lead">{{amenities|safe}}</p>
+    </div>
+    {% comment %} <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div> {% endcomment %}
+  </div>
+</div>
+</div>
+
+  {% comment %} <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5">Quel pourcentage des hosts on une vérification:
+
+            par téléphone
+            par email
+            par email pro</h2>
+        <p class="lead">{{phone}}
+            {{work}}
+            {{email}}</p>
+      </div>
+      {% comment %} <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div> {% endcomment %}
+      {% comment %} <div class= "container">
+    </div>
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5">En fonction du type de room, calculez le nombre moyen amenities et l'écart type.</h2>
+        <p class="lead">{{amenities|safe}}</p>
+      </div>
+      {% comment %} <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div> {% endcomment %}
+    </div>
+  </div>
+</div> 
+
+
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5">Quel est le prix median par type de room, le maximum, le minimum, le premier et le troisième quartile</h2>
+        <p class="lead">{{price|safe}}</p>
+      </div>
+      {% comment %} <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div> {% endcomment %}
+    </div>
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5"> Combien y-a-t-il d’annonces par "valeur de salle de bain"?</h2>
+        <p class="lead">
+            {{bath}}</p>
+      </div>
+      {% comment %} <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div> {% endcomment %}
+    </div>
+  </div>
+
+
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5">Il y a t’il une corrélation entre le nombre de reviews et la taille de la description en terme de nombre de caractères?</h2>
+        <p class="lead">{{corelation}}</p>
+      </div>
+      {% comment %} <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div> {% endcomment %}
+    </div>
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5">Quel est ce pourcentage général de séjour où le nom de l'host est identique au nom du reviewer?</h2>
+        <p class="lead">
+            {{faux}} </p>
+    </div>
+
+  {% endblock content %}
