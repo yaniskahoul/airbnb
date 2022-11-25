@@ -62,8 +62,8 @@ def question_1(request):
                                                             'phone':phone_pourcentage, 
                                                             'work':work_pourcentage, 
                                                              'email':email_pourcentage, 
-                                                                  'amenities':amenities.to_html(classes="table table-sm"), 
-                                                                'price':price.to_html, 
+                                                            'amenities':amenities.to_html(classes="table table-sm"), 
+                                                            'price':price.to_html, 
                                                               'bath':bath,
                                                              'corelation':coorelation, 
                                                              'faux':faux_commentaire 

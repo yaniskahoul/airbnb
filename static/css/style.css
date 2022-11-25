@@ -1,0 +1,10 @@
+.card{
+    display: flex;
+    display: inline-block;
+    margin: 100px;
+
+}
+
+.city-lien{
+       align-items: center;
+}
