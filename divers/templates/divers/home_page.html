@@ -1,16 +1,33 @@
 {% extends 'base.html' %}
-{% block content  %}
 {% load static  %}
-<h3class="fs-2">
-Bonjour  hola   tudobem  hi  wassup</h3>
-    <p> Ce site liste ville par ville les données recueillies par le site airbnb 
-        <ul> 
-            Soyez indulgent, le site est en construction</ul>
-    </p>
-    <div id="mapsvg"></div>
-    <a href="#" class="btn btn-primary">
-      Bruxelles
-    </a>
+{% url 'question' as url_question %}
+{% block content  %}
+
+
+<div class="container">
+
+  
+    <div class="card" style="width: 18rem; ">
+      <img src="static/image/bruxelles.jpg" height="200px" width="500px" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Bruxelles</h5>
+        <p class="card-text">Tout savoir sur ls airbnb de la ville de bruxelles</p>
+        <a href="{% url 'question' %}?city=bruxelles" class="btn btn-primary city-lien">Bruxelles</a>
+      </div>
+    </div>
+
+
+  
+
+    <div class="card" style="width: 18rem; ">
+      <img src="static/image/anvers.jpeg" height="200px" width="500px" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Anvers</h5>
+        <p class="card-text">Tout savoir sur ls airbnb de la ville de Anvers</p>
+        <a href="{% url 'question' %}?city=anvers" class="btn btn-primary city-lien">Anvers</a>
+      </div>
+    </div>
+  </div>
 
 
 {% endblock content %}
